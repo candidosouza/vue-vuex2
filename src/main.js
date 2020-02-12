@@ -1,8 +1,9 @@
-import Vue from 'vue'
+import Vue from 'vue';
+import { Time } from './time'
 
 new Vue({
   el: '#app',
   data: {
-    titulo: "Minha primeira aplicação Vue2"
+    time: new Time("Time X", "valor")
   }
 })
