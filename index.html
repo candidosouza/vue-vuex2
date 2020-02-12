@@ -5,12 +5,39 @@
     <title>vuex2</title>
   </head>
   <body>
-    <div id="app">
-      <ul>
-        <li v-for="time in times">
-          {{ time.nome }} <img :src="time.escudo" />
-        </li>
-      </ul>
+    <div id="app" class="container">
+      <div class="row">
+
+      </div>
+
+      <h1>Campeonato brasileiro - série A - 2016</h1>
+
+      <br><br>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Pontos</th>
+            <th>GM</th>
+            <th>GS</th>
+            <th>Saldo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="time in times">
+            <td>
+                <img :src="time.escudo" style="width: 30px;" />
+                <strong>{{ time.nome }}</strong>
+            </td>
+            <td>{{ time.pontos }}</td>
+            <td>{{ time.gm }}</td>
+            <td>{{ time.gs }}</td>
+            <td>Saldo</td>
+
+          </tr>
+        </tbody>
+      </table>
       
     </div>
     <script src="/dist/build.js"></script>
