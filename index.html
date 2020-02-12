@@ -6,7 +6,12 @@
   </head>
   <body>
     <div id="app">
-      {{ time.nome }} <img :src="time.escudo" />
+      <ul>
+        <li v-for="time in times">
+          {{ time.nome }} <img :src="time.escudo" />
+        </li>
+      </ul>
+      
     </div>
     <script src="/dist/build.js"></script>
   </body>
