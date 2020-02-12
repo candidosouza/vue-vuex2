@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>vuex2</title>
-  </head>
-  <body>
-    <div id="app" class="container">
-      <div class="row">
 
-      </div>
+<head>
+  <meta charset="utf-8">
+  <title>vuex2</title>
+</head>
+
+<body>
+  <div id="app" class="container">
+    <div class="row">
 
       <h1>Campeonato brasileiro - série A - 2016</h1>
 
@@ -27,8 +27,8 @@
         <tbody>
           <tr v-for="time in times">
             <td>
-                <img :src="time.escudo" style="width: 30px;" />
-                <strong>{{ time.nome }}</strong>
+              <img :src="time.escudo" style="width: 30px;" />
+              <strong>{{ time.nome }}</strong>
             </td>
             <td>{{ time.pontos }}</td>
             <td>{{ time.gm }}</td>
@@ -38,8 +38,41 @@
           </tr>
         </tbody>
       </table>
-      
+
     </div>
-    <script src="/dist/build.js"></script>
-  </body>
+
+
+  <div class="row">
+
+    <form class="form-inline">
+      <div class="form-group">
+          <input type="text" class="form-control" v-model="novoJogo.casa.gols" @keyup.enter="fimJogo">
+          <label class="control-label">
+              {{novoJogo.casa.time.nome}}
+              <img :src="novoJogo.casa.time.escudo" style="height: 30px; width: 30px;">
+          </label>
+      </div>
+      <span> X </span>
+      <div class="form-group">
+          <label class="control-label">
+              <img :src="novoJogo.fora.time.escudo" style="height: 30px; width: 30px;">
+              {{novoJogo.fora.time.nome}}
+          </label>
+          <input type="text" class="form-control" v-model="novoJogo.fora.gols">
+      </div>
+      <button type="button" class="btn btn-primary" >Fim de jogo</button>
+  </form>
+
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <script src="/dist/build.js"></script>
+</body>
+
 </html>

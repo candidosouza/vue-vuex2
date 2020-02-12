@@ -28,6 +28,27 @@ new Vue({
       new Time('Figueirense', require('./assets/figueirense_60x60.png')),
       new Time('Santa Cruz', require('./assets/santa_cruz_60x60.png')),
       new Time('América-MG', require('./assets/america_mg_60x60.png')),
-    ]
+    ],
+
+    novoJogo: {
+      casa: {
+        time: null,
+        gols: 0
+      },
+      fora: {
+        time: null,
+        gols: 0
+      }
+    },
+  },
+
+  created() {
+    let indexCasa = Math.floor(Math.random() * 20),
+        indexFora = Math.floor(Math.random() * 20);
+
+    this.novoJogo.casa.time = this.times[indexCasa];
+    this.novoJogo.casa.gols = 0;
+    this.novoJogo.fora.time = this.times[indexFora];
+    this.novoJogo.fora.gols = 0;
   }
 })
