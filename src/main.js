@@ -1,4 +1,7 @@
 import Vue from "vue";
+
+import './filter';
+
 import { Time } from "./time";
 import _ from "lodash";
 
@@ -172,16 +175,6 @@ let appComponent = Vue.extend({
       });
     }
   },
-
-  filters: {
-    saldo(time) {
-      return time.gm - time.gs;
-    },
-
-    ucwords(value) {
-      return value.charAt(0).toUpperCase() + value.slice(1);
-    }
-  }
 });
 
 new Vue({
