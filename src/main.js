@@ -5,13 +5,14 @@ import _ from 'lodash';
 require("bootstrap/dist/css/bootstrap.min.css");
 require("bootstrap");
 
-var teste = new Vue({
+new Vue({
   el: "#app",
   data: {
     order: {
         keys: ['pontos', 'gm', 'gs'],
         sort: ['desc', 'desc', 'asc']
     },
+    filter: '',
     colunas: ["nome", "pontos", "gm", "gs", "saldo"],
     times: [
       new Time("Palmeiras", require("./assets/palmeiras_60x60.png")),
@@ -80,8 +81,12 @@ var teste = new Vue({
 
   computed: {
     timesFiltered() {
-      return _.orderBy(this.times, this.order.keys, this.order.sort);
-    }
+      let colecao = _.orderBy(this.times, this.order.keys, this.order.sort);
+
+      return _.filter(colecao, item => {
+        return item.nome.indexOf(this.filter) >= 0;
+      });
+    },
   },
 
   filters: {
@@ -95,4 +100,4 @@ var teste = new Vue({
   }
 });
 
-console.log(teste.view);
+// console.log(teste.view);
