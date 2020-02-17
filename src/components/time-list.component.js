@@ -1,5 +1,5 @@
 import _ from "lodash";
-import event from '../event';
+// import event from '../event';
 import store from '../store';
 
 export default {
@@ -47,10 +47,10 @@ export default {
   },
 
   methods: {
-    showNovoJogo() {
-      event.$emit('show-time-novojogo');
-      event.$emit('get-times', this.times);
-    },
+    // showNovoJogo() {
+    //   event.$emit('show-time-novojogo');
+    //   event.$emit('get-times', this.times);
+    // },
     sortBy(coluna) {
       this.order.keys = coluna;
       this.order.sort = this.order.sort == "desc" ? "asc" : "desc";
