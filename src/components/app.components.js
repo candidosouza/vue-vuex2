@@ -3,6 +3,8 @@ import timeJogoComponent from "./time-jogo.component";
 
 import event from '../event';
 
+import store from '../store';
+
 export default {
     components: {
         'time-list': timeListComponent,
@@ -37,10 +39,10 @@ export default {
       });
     },
   
-    data() {
-      return {  
-        view: "tabela"
-      };
+    computed: {
+      view() {
+        return store.state.view;
+      }
     },
   
     methods: {
