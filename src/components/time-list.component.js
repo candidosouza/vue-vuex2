@@ -5,7 +5,7 @@ import store from '../store';
 export default {
   template: `
         <div>
-            <a href="#" class="btn btn-primary" @click.prevent="showNovoJogo">Novo Jogo time list</a>
+            <a href="#" class="btn btn-primary" @click.prevent="showNovoJogo">Novo Jogo</a>
             <br />
             <br />
             <input type="text" placeholder="Filtro" class="form-control" v-model="filter">
@@ -67,7 +67,8 @@ export default {
     },
 
     times() {
-      return store.state.times;
+      // return store.state.times;
+      return this.$store.state.times;
     },
   }
 };

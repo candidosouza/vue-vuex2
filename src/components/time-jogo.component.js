@@ -1,8 +1,6 @@
 export default {
   template: `
           <div>
-            <a href="#" class="btn btn-primary" @click.prevent="initJogo">Novo Jogo time jogo</a>
-
             <br />
             <br />
 

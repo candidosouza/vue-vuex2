@@ -30,7 +30,8 @@ export default {
   
     computed: {
       view() {
-        return store.state.view;
+        // return store.state.view;
+        return this.$store.state.view;
       }
     },
   
