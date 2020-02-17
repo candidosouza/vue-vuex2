@@ -13,15 +13,12 @@ export default {
 
           <h1>Campeonato brasileiro - série A - 2016</h1>
 
-          <a href="#" class="btn btn-primary" @click.prevent="createNovoJogo">Novo Jogo</a>
 
-          <br />
-
-          <div v-if="view == 'tabela'">
+          <div v-show="view == 'tabela'">
             <time-list></time-list>
           </div>
   
-          <div v-else>
+          <div v-show="view == 'novojogo'">
             <time-jogo></time-jogo>
           </div>
 
