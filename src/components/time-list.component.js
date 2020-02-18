@@ -1,6 +1,6 @@
 import _ from "lodash";
 // import event from '../event';
-import store from '../store';
+import store from "../store";
 
 export default {
   template: `
@@ -35,6 +35,9 @@ export default {
         </div>
     `,
 
+  created() {
+    store.dispatch('load-times');
+  },
   data() {
     return {
       order: {
@@ -42,13 +45,13 @@ export default {
         sort: ["desc", "desc", "asc"]
       },
       filter: "",
-      colunas: ["nome", "pontos", "gm", "gs", "saldo"],
+      colunas: ["nome", "pontos", "gm", "gs", "saldo"]
     };
   },
 
   methods: {
     showNovoJogo() {
-      store.commit('show-time-novojogo')
+      store.commit("show-time-novojogo");
     },
     sortBy(coluna) {
       this.order.keys = coluna;
@@ -68,6 +71,6 @@ export default {
     times() {
       // return store.state.times;
       return this.$store.state.times;
-    },
+    }
   }
 };
