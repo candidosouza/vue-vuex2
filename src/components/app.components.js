@@ -1,5 +1,6 @@
 import timeListComponent from "./time-list.component";
 import timeJogoComponent from "./time-jogo.component";
+import timeZonaComponent from "./time-zona.component";
 
 import store from '../store';
 
@@ -7,6 +8,7 @@ export default {
     components: {
         'time-list': timeListComponent,
         'time-jogo': timeJogoComponent,
+        'time-zona': timeZonaComponent,
     },
     template: `
         <div class="container">
@@ -24,14 +26,18 @@ export default {
             <time-jogo></time-jogo>
           </div>
 
+          <div v-show="view == 'zona'">
+            <time-zona></time-zona>
+          </div>
+
         </div>
       </div>
     `,
   
     computed: {
       view() {
-        // return store.state.view;
-        return this.$store.state.view;
+        return store.state.view;
+        // return this.$store.state.view;
       }
     },
   
