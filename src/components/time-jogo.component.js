@@ -1,3 +1,5 @@
+import store from '../store';
+
 export default {
   template: `
           <div>
@@ -43,6 +45,10 @@ export default {
             </form>
           </div>
     `,
+
+    mounted() {
+      this.initJogo(store.state.times);
+    },
 
   data() {
     return {

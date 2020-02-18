@@ -47,10 +47,9 @@ export default {
   },
 
   methods: {
-    // showNovoJogo() {
-    //   event.$emit('show-time-novojogo');
-    //   event.$emit('get-times', this.times);
-    // },
+    showNovoJogo() {
+      store.commit('show-time-novojogo')
+    },
     sortBy(coluna) {
       this.order.keys = coluna;
       this.order.sort = this.order.sort == "desc" ? "asc" : "desc";
