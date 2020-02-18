@@ -46,10 +46,10 @@ export default {
 
   computed: {
     timesLibertadores() {
-      return store.state.timesLibertadores;
+      return store.getters.timesLibertadores;
     },
     timesRebaixados() {
-      return store.state.timesRebaixados;
+      return store.getters.timesRebaixados;
     },
   }
 };
