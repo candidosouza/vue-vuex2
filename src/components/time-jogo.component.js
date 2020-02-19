@@ -3,9 +3,6 @@ import store from '../store';
 export default {
   template: `
           <div>
-            <br />
-            <br />
-
             <form class="form-inline">
               <div class="form-group">
                 <input

@@ -14,19 +14,30 @@ export default {
         <div class="container">
           <div class="row d-flex flex-column">
           <br />
+          
 
           <h1>Campeonato brasileiro - série A - 2016</h1>
 
+          <div>
 
-          <div v-show="view == 'tabela'">
+            <a href="#" class="btn btn-primary" @click.prevent="showTabela">Ver Tabela</a>
+
+            <a href="#" class="btn btn-primary" @click.prevent="showNovoJogo">Novo Jogo</a>
+            
+            <a href="#" class="btn btn-primary" @click.prevent="showZona">Zonas</a>
+          
+          </div>
+          <br />
+
+          <div v-if="view == 'tabela'">
             <time-list></time-list>
           </div>
   
-          <div v-show="view == 'novojogo'">
+          <div v-if="view == 'novojogo'">
             <time-jogo></time-jogo>
           </div>
 
-          <div v-show="view == 'zona'">
+          <div v-if="view == 'zona'">
             <time-zona></time-zona>
           </div>
 
@@ -40,4 +51,16 @@ export default {
         // return this.$store.state.view;
       }
     },
+    methods: {
+      showTabela() {
+        store.commit("show-time-list");
+      },
+      showNovoJogo() {
+        store.commit("show-time-novojogo");
+      },
+
+      showZona() {
+        store.commit("show-time-zona")
+      }
+    }
   };
